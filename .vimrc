@@ -6,13 +6,15 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[1 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+set laststatus=2
 
 autocmd vimenter * ++nested colorscheme gruvbox
 
 set bg=dark
 let g:gruvbox_termcolors=16
 
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:kite_tab_complete=1
+let g:kite_supported_languages = ['*']
 
 set laststatus=2
 set tabstop=4
@@ -40,7 +42,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'valloric/youcompleteme'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
