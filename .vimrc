@@ -1,43 +1,49 @@
-syntax on
-imap jj <Esc>
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[1 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+autocmd vimenter * ++nested colorscheme gruvbox
+
+set bg=dark
+let g:gruvbox_termcolors=16
+
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+set laststatus=2
 set tabstop=4
 set shiftwidth=4
-set backspace=indent,eol,start
-set nocompatible
+set expandtab
 set hlsearch
-filetype off
+set number relativenumber
 
-let g:jedi#completions_enabled = 1
+imap jj <Esc>
+nnoremap <Tab> <c-w>w
+map <S-n> :NERDTreeToggle<CR>
+
 let g:ctrlp_map = '<S-f>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:airline_theme='minimalist'
+let g:ctrlp_working_path_mode = 'ra'
 
-map <S-n> :NERDTreeToggle<CR>
-nmap <S-t> :TagbarToggle<CR>
-nnoremap <Tab> <c-w>w
-
-command! -complete=file -nargs=+ SS execute 'SideSearch <args>'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd FileType python setlocal completeopt-=preview
-autocmd FileType python map <buffer> <C-f> :call flake8#Flake8()<CR>
 
-source /Users/svadali/.vim/side-search.vim
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'valloric/youcompleteme'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'nvie/vim-flake8'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'pydoc.vim'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'valloric/youcompleteme'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 
-call vundle#end()
-filetype plugin indent on
+call vundle#end()            " required
+filetype plugin indent on    " required
