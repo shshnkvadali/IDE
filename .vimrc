@@ -7,7 +7,6 @@ let &t_SI.="\e[1 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 set laststatus=2
-set :Tmuxline vim_statusline_1
 
 autocmd vimenter * ++nested colorscheme gruvbox
 
