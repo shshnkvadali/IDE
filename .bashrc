@@ -1,5 +1,4 @@
 export PATH=$PATH:$HOME/.local/bin
-
 # Powerline configuration
 if [ -f $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh ]; then
     $HOME/.local/bin/powerline-daemon -q
@@ -14,3 +13,4 @@ alias ga='git add $@'
 alias gco='git commit -m $@'
 alias gp='git push'
 alias gl='git log'
+alias cl='clear'
