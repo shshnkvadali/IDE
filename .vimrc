@@ -1,7 +1,3 @@
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-
 syntax on
 set wildmenu
 set tabstop=4
@@ -19,6 +15,8 @@ au BufRead,BufNewFile *.sol setfiletype solidity
 imap jj <Esc>
 let g:ctrlp_map = '<S-f>'
 let g:ctrlp_working_path_mode = 'ra'
+let g:airline#extensions#tmuxline#enabled = 0
+let g:tmuxline_theme = 'murmur'
 
 let g:airline_theme='murmur'
 set t_Co=256
@@ -37,6 +35,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'TovarishFin/vim-solidity'
+Plugin 'rust-lang/rust.vim'
+Plugin 'edkolev/tmuxline.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
