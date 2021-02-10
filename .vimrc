@@ -15,15 +15,10 @@ au BufRead,BufNewFile *.sol setfiletype solidity
 imap jj <Esc>
 let g:ctrlp_map = '<S-f>'
 let g:ctrlp_working_path_mode = 'ra'
-let g:airline#extensions#tmuxline#enabled = 0
-let g:tmuxline_theme = 'murmur'
 
-let g:airline_theme='murmur'
 set t_Co=256
 colorscheme slate
 set background=dark
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -34,11 +29,6 @@ Plugin 'neoclide/coc.nvim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'TovarishFin/vim-solidity'
-Plugin 'rust-lang/rust.vim'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
