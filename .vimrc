@@ -22,12 +22,10 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 
-highlight VertSplit cterm=NONE
-hi foldcolumn guibg=grey
-hi VertSplit guibg=grey guifg=grey
-set fillchars+=vert:\
-nnoremap <Tab> <c-w>w
 map <S-n> :NERDTreeToggle<CR>
+autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Grey ctermbg=NONE
+set fillchars+=vert:\|
+nnoremap <Tab> <c-w>w
 noremap <S-l> :set invnumber invrelativenumber<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeMinimalUI=1
