@@ -1,11 +1,15 @@
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
 syntax on
 set wildmenu
 set tabstop=4
 set laststatus=2
 set laststatus=2
 
-highlight LineNr ctermfg=white
 highlight VertSplit cterm=NONE
+set fillchars+=vert:\
 nnoremap <Tab> <c-w>w
 map <S-n> :NERDTreeToggle<CR>
 noremap <S-l> :set invnumber invrelativenumber<CR>
