@@ -11,6 +11,12 @@ set tabstop=4
 set laststatus=2
 set updatetime=300
 set shortmess+=c
+let &t_SI = "\<Esc>]12;red\x7"
+let &t_SR = "\<Esc>]12;orange\x7"
+let &t_EI = "\<Esc>]12;blue\x7"
+let &t_SI.="\e[1 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 if has('nvim')
         inoremap <silent><expr> <c-space> coc#refresh()
