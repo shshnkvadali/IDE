@@ -1,3 +1,7 @@
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
 syntax on
 set wildmenu
 set encoding=utf-8
@@ -13,10 +17,9 @@ autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Grey ctermbg=NONE
 set fillchars+=vert:\|
 let g:NERDTreeWinPos = "right"
 nnoremap <Tab> <c-w>w
-noremap <S-l> :set invnumber invrelativenumber<CR>
+noremap <S-m> :set invnumber invrelativenumber<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeMinimalUI=1
-au BufRead,BufNewFile *.sol setfiletype solidity
 
 imap jj <Esc>
 let g:ctrlp_map = '<S-f>'
